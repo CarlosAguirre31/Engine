@@ -6,22 +6,27 @@ import android.graphics.Canvas;
 
 public class Image extends DisplayObject {
 
-       private Bitmap bmp;
+    private Bitmap bmp;
+    int Source;
+    String key;
+    String _tag;
 
 
-       public Image(String id, Resources resources) {
-            super(resources);
-            bmp = this.resources.getBmp(id);
+       public void Image(String key, int source, Resources res)
+       {
+           this.resources = res;
+           this.key = key;
+           this.resources.LoadTexture(this.key, res);
 
        }
 
  
 
-       public void onDraw(Canvas canvas) {
-              super.onDraw(canvas);
-              canvas.drawBitmap(bmp, x, y, null);
-
+       public void onDraw(Canvas c)
+       {
+           c.(resources.getTexture())
        }
+
 
 
 }

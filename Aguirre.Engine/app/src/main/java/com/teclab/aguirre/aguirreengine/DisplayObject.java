@@ -12,6 +12,18 @@ import android.view.animation.Transformation;
  */
 public class DisplayObject {
 
+    public DisplayObject(){
+        x=y=0;
+        scaleX = scaleY = 1.0F;
+        rotation=0;
+        pivotX=pivotY=0;
+        opacity = 1.0F;
+        width = height = 0;
+        visible = true;
+        parent = null;
+        /*transformation = new Transformation(this);  */
+    }
+
     public int x,y;
     public DisplayObject parent;
     public Resources resources;
