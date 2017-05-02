@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 /**
- * Created by ptemoche on 4/9/2017.
+ * Created by Heat on 4/9/2017.
  */
 
 public class SoundManager {
@@ -142,4 +142,3 @@ public class SoundManager {
 
 
 }
-

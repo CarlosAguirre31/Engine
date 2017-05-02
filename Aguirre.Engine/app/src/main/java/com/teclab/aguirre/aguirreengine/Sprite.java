@@ -6,11 +6,9 @@ import android.graphics.Rect;
 
  
 
-public class Sprite extends DisplayObject{
+public class Sprite extends DisplayContainer{
 
-       public sprite{}
-
-
+       public Sprite(){}
 
 }
 

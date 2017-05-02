@@ -23,13 +23,11 @@ public class GameView extends SurfaceView {
     public GameView(Context context) {
 
         super(context);
-        resources = new Resources(this);
+        resources = new Resources(context);
         myScene = new MainScene(this.resources);
         gameLoopThread = new GameLoopThread(this);
 
         getHolder().addCallback(new SurfaceHolder.Callback() {
-
-
 
             public void surfaceDestroyed(SurfaceHolder holder) {
 
@@ -51,20 +49,11 @@ public class GameView extends SurfaceView {
 
             }
 
-
-
-
-
             public void surfaceCreated(SurfaceHolder holder) {
 
                    gameLoopThread.setRunning(true);
                    gameLoopThread.start();
-
             }
-
-
-
-
 
             public void surfaceChanged(SurfaceHolder holder, int format,
 
@@ -82,8 +71,9 @@ public class GameView extends SurfaceView {
 
     protected void onDraw(Canvas canvas) {
 
+        resources.canvas = canvas;
         canvas.drawColor(Color.BLACK);
-        myScene.onDraw(canvas);
+        myScene.onDraw();
     }
 
 
@@ -101,7 +91,7 @@ public class GameView extends SurfaceView {
                 float y = event.getY();
 
                 synchronized (getHolder()) {
-                    myScene.onTouchEvent(event);
+                    //myScene.onTouchEvent(event);
                 }
 
          }
